@@ -45,7 +45,7 @@ namespace Art_gall.Util
 
             // This is where you construct your connection string
             string connectionString = $"Server={server};Database={dbname};User Id={username};Password={password}; TrustServerCertificate ={trustedconnection}";
-            Console.WriteLine(connectionString);
+            Console.WriteLine($"Connection Strings:{ connectionString}");
             return connectionString;
         }
 

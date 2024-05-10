@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6Tyjb8aUl3Ym/IxJtkk54742qtW3FcVbyHrWmL1/xeJzSEn+PyYOiz41UWyaQM4ATvp9w+YBOBEEvKzq75c8cg==",
+  "dgSpecHash": "Y7p8PBwCz7YP0xrh3aA9ov1v93USQ6a4oBy9m5fXId/crGz6bdoQwe6OPM2NlBogsHO+lA98dOqDidLspWMEnw==",
   "success": true,
-  "projectFilePath": "D:\\Virtual_Art_Gal\\Art_gall\\Art_gall\\Art_gall.csproj",
+  "projectFilePath": "D:\\Virtual_Art_Gal\\Art_git_hub\\Art\\Art_gall\\Art_gall.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Akash\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Akash\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

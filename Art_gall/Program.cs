@@ -33,20 +33,53 @@ namespace Art_gall
                 }
             }
 
-            IVirtualArtGallery gallery = new VirtualArtGallery();
-            Artwork artwork1 = new Artwork
-            {
-                ArtworkID = 0,
-                Title = "Artist 1",
-                Description = "Description 1",
-                Medium = "test",
-                CreationDate = new DateTime(2024, 5, 1),
-                ImageURL ="",
-               
-            };
-            bool added = gallery.AddArtwork(artwork1);
-            Console.WriteLine($"Added artwork 1: {added}");
 
+            // Create an instance of VirtualArtGallery
+            VirtualArtGallery virtualArtGallery = new VirtualArtGallery();
+            Artwork artwork = new Artwork();
+
+            // Set artwork properties as needed
+            artwork.Title = "Example Title";
+            artwork.Description = "Example Description";
+            artwork.CreationDate = DateTime.Now;
+            artwork.Medium = "Example Medium";
+            artwork.ImageURL = "Example Image URL";
+
+
+            // Call the GetArtworkList() method
+            List<Artwork> artworkList = virtualArtGallery.GetArtworkList();
+
+            bool isadded = virtualArtGallery.AddArtwork(artwork);
+            // Check the result
+            if (isadded)
+            {
+                Console.WriteLine("Artwork added successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Failed to add artwork.");
+            }
+
+            //remove Art work
+            Console.Write("Enter the ID of the artwork to remove: ");
+            if (!int.TryParse(Console.ReadLine(), out int artworkIDToRemove) || artworkIDToRemove <= 0)
+            {
+                Console.WriteLine("Invalid artwork ID. Please enter a valid integer greater than 0.");
+                return; // Exit the program if the ID is invalid
+            }
+
+            // Call the RemoveArtwork method
+            bool isArtworkRemoved = virtualArtGallery.RemoveArtwork(artworkIDToRemove);
+
+            // Check the result
+            if (isArtworkRemoved)
+            {
+                Console.WriteLine("Artwork removed successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Failed to remove artwork.");
+            }
             //bool updated = gallery.UpdateArtwork(artwork2);
             //Console.WriteLine($"Updated artwork 1: {updated}");
 

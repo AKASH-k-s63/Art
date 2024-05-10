@@ -2543,11 +2543,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Virtual_Art_Gal\\Art_gall\\Art_gall\\Art_gall.csproj",
+      "projectUniqueName": "D:\\Virtual_Art_Gal\\Art_git_hub\\Art\\Art_gall\\Art_gall.csproj",
       "projectName": "Art_gall",
-      "projectPath": "D:\\Virtual_Art_Gal\\Art_gall\\Art_gall\\Art_gall.csproj",
+      "projectPath": "D:\\Virtual_Art_Gal\\Art_git_hub\\Art\\Art_gall\\Art_gall.csproj",
       "packagesPath": "C:\\Users\\Akash\\.nuget\\packages\\",
-      "outputPath": "D:\\Virtual_Art_Gal\\Art_gall\\Art_gall\\obj\\",
+      "outputPath": "D:\\Virtual_Art_Gal\\Art_git_hub\\Art\\Art_gall\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

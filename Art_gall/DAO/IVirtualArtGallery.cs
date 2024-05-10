@@ -10,15 +10,18 @@ namespace Art_gall.DAO
     public interface IVirtualArtGallery
     {
         // Artwork Management
-       // List<Artwork> GetArtworkList();
+       List<Artwork> GetArtworkList();
         bool AddArtwork(Artwork artwork);
-       // bool UpdateArtwork(Artwork artwork);
+
+        // bool UpdateArtwork(Artwork artwork);
+        bool RemoveArtwork(int artworkId);
     }
 
     public abstract class VirtualArtGalleryBase : IVirtualArtGallery
     {
-        //public abstract List<Artwork> GetArtworkList();
+        public abstract List<Artwork> GetArtworkList();
         public abstract bool AddArtwork(Artwork artwork);
-       // public abstract bool UpdateArtwork(Artwork artwork);
+        // public abstract bool UpdateArtwork(Artwork artwork);
+        public abstract bool RemoveArtwork(int artworkId);
     }
 }
