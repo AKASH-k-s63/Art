@@ -1,4 +1,0 @@
-﻿
-
-
-ConnectionString= User Name= AKASH_NEW_USER;Password=Root123;Server=ACC-002\\SQLEXPRESS04;Database=VirtualArt; Trusted_Connection=True;
