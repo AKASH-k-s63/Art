@@ -20,6 +20,12 @@ namespace Art_gall.DAO
         bool AddArtworkToFavorite(int userId, int artworkId);
         bool RemoveArtworkFromFavorite(int userId, int artworkId);
         List<Artwork> GetUserFavoriteArtworks(int userId);
+        bool AddArtworktoGallery(int artworkId, int galleryId);
+
+
+        // List<Artwork> GetArtworkFromGallary(int artworkId);
+        
+
     }
    
 }

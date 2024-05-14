@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Art_gall.Exceptions.ExceptionHandling;
 
-namespace Art_gall.DAO
+namespace Art_gall.DAO.Service
 {
     public class CrimeAnalysisServiceImpl : IVirtualArtGallery
     {
@@ -59,7 +59,7 @@ namespace Art_gall.DAO
             {
                 throw new ArtWorkNotFoundException(ex.Message);
             }
-            
+
             foreach (Artwork artwork in artworkList)
             {
                 Console.WriteLine($"ArtworkID: {artwork.ArtworkID}, Title: {artwork.Title}, CreationDate: {artwork.CreationDate}, ImageURL: {artwork.ImageURL}, Description: {artwork.Description}, Medium: {artwork.Medium}");
@@ -175,7 +175,7 @@ namespace Art_gall.DAO
                     throw new ArgumentException("Artwork ID cannot be 0 for updating existing artwork", nameof(updateartwork));
                 }
 
-                
+
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 using (SqlCommand command = connection.CreateCommand())
                 {
@@ -246,7 +246,9 @@ namespace Art_gall.DAO
                             {
                                 return null;
                             }
+
                         }
+                        connection.Close();
                     }
                 }
             }
@@ -306,7 +308,7 @@ namespace Art_gall.DAO
             }
         }
 
-       //Add art work to favourites
+        //Add art work to favourites
         public bool AddArtworkToFavorite(int userId, int artworkId)
         {
             try
@@ -323,7 +325,7 @@ namespace Art_gall.DAO
 
                         connection.Open();
                         int rowsAffected = cmd.ExecuteNonQuery();
-                       // return rowsAffected > 0;
+                        // return rowsAffected > 0;
                         if (rowsAffected > 0)
                         {
                             Console.WriteLine("Artwork Added to Fav successfully.");
@@ -379,9 +381,9 @@ namespace Art_gall.DAO
             catch (Exception ex)
             {
                 throw new ArtWorkNotFoundException(ex.Message);
-               
+
             }
-            
+
         }
 
         public List<Artwork> GetUserFavoriteArtworks(int userId)
@@ -430,6 +432,48 @@ namespace Art_gall.DAO
 
             return favoriteArtworks;
         }
+
+        //ADD ART WORK TO GALLERY//
+
+        public bool AddArtworktoGallery(int artworkId, int galleryId)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = "INSERT INTO Artwork_Gallery (ArtworkID, GalleryID) " +
+                                   "VALUES (@ArtworkID, @GalleryID)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        
+                        cmd.Parameters.AddWithValue("@ArtworkID", artworkId);
+                        cmd.Parameters.AddWithValue("@GalleryID",galleryId );
+
+                        connection.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        // return rowsAffected > 0;
+                        if (rowsAffected > 0)
+                        {
+                            Console.WriteLine("Added TO  Gallary successfully.");
+                            return true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Failed to Add  to Gallary .");
+                            return false;
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArtWorkNotFoundException(ex.Message); ;
+
+            }
+        }
+
     }
 }
 

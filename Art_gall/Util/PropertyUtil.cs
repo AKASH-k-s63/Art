@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Art_gall.Util
 {
-    public static class PropertyUtil
+    public  class PropertyUtil
     {
         private static SqlConnection connection;
 

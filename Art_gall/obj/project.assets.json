@@ -46,6 +46,19 @@
           }
         }
       },
+      "Microsoft.AspNet.SessionState.SessionStateModule/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Net462/Microsoft.AspNet.SessionState.SessionStateModule.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/Net462/Microsoft.AspNet.SessionState.SessionStateModule.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -944,6 +957,23 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "Microsoft.AspNet.SessionState.SessionStateModule/2.0.0": {
+      "sha512": "HxVbbKli+k+/gv2SLdDQA/EWY67lbAnHYzZK9y+ENm04C9PcO9ubJtUhZ03oGqoi1tvTpPWyxjJgpXkcjl5oow==",
+      "type": "package",
+      "path": "microsoft.aspnet.sessionstate.sessionstatemodule/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Net462/web.config.install.xdt",
+        "content/Net462/web.config.uninstall.xdt",
+        "docs/Readme.md",
+        "images/dotnet-icon.png",
+        "lib/Net462/Microsoft.AspNet.SessionState.SessionStateModule.dll",
+        "lib/Net462/Microsoft.AspNet.SessionState.SessionStateModule.xml",
+        "microsoft.aspnet.sessionstate.sessionstatemodule.2.0.0.nupkg.sha512",
+        "microsoft.aspnet.sessionstate.sessionstatemodule.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -2529,6 +2559,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Microsoft.AspNet.SessionState.SessionStateModule >= 2.0.0",
       "Microsoft.Data.SqlClient >= 5.2.0",
       "Microsoft.Extensions.Configuration >= 8.0.0",
       "Microsoft.Extensions.Configuration.FileExtensions >= 8.0.0",
@@ -2581,6 +2612,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Microsoft.AspNet.SessionState.SessionStateModule": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "Microsoft.Data.SqlClient": {
             "target": "Package",
             "version": "[5.2.0, )"
@@ -2621,5 +2656,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.SessionState.SessionStateModule 2.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.SessionState.SessionStateModule",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

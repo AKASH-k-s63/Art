@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Art_gall.DAO
+namespace Art_gall
 {
     public class ArtworkManagement
     {
@@ -96,6 +97,62 @@ namespace Art_gall.DAO
 
         //    return artworkIDToRemove;
         //}
+
+        public static void AddUserData(User user)
+        {
+            Console.WriteLine("Enter the Required Data for adding users:");
+            Console.WriteLine("Enter User Name:");
+            user.Username = Console.ReadLine();
+
+            Console.WriteLine("Enter Password:");
+            user.Password = Console.ReadLine();
+            /*var Encryptpass = Encryptpwd(Passwor);
+            user.Password = Encryptpass;
+            Console.WriteLine($"Encrypted pwd:{Encryptpass}");*/
+
+            Console.WriteLine("Enter Email Address:");
+            user.Email = Console.ReadLine();
+
+            Console.WriteLine("Enter the First Name:");
+            user.FirstName = Console.ReadLine();
+
+            Console.WriteLine("Enter the Last Name:");
+            user.LastName = Console.ReadLine();
+
+            Console.WriteLine("Enter DOB (YYYY-MM-DD):");
+            if (!DateTime.TryParse(Console.ReadLine(), out DateTime BirthDate))
+            {
+                throw new ArgumentException("Invalid date format. Please enter date in YYYY-MM-DD format.");
+            }
+            user.DateOfBirth = BirthDate;
+
+            Console.WriteLine("Upload User Profile");
+            user.ProfilePicture = Console.ReadLine();
+        }
+
+        public static string Encryptpwd(string password)
+        {
+            try
+            {
+                using (SHA256 sha256 = SHA256.Create())
+                {
+                    // Compute hash from the password bytes
+                    byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                    // Convert byte array to a string
+                    StringBuilder builder = new StringBuilder();
+                    for (int i = 0; i < hashBytes.Length; i++)
+                    {
+                        var res = builder.Append(hashBytes[i].ToString("x2")); // Convert each byte to a hexadecimal string
+                    }
+                    return builder.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 
 

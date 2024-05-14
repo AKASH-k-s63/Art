@@ -144,3 +144,4 @@ D:\Virtual_Art_Gal\Art_git_hub\Art\Art_gall\bin\Debug\net6.0\runtimes\win\lib\ne
 D:\Virtual_Art_Gal\Art_git_hub\Art\Art_gall\obj\Debug\net6.0\Art_gall.csproj.CopyComplete
 D:\Virtual_Art_Gal\Art_git_hub\Art\Art_gall\obj\Debug\net6.0\Art_gall.genruntimeconfig.cache
 D:\Virtual_Art_Gal\Art_git_hub\Art\Art_gall\obj\Debug\net6.0\ref\Art_gall.dll
+D:\Virtual_Art_Gal\Art_git_hub\Art\Art_gall\bin\Debug\net6.0\Microsoft.AspNet.SessionState.SessionStateModule.dll

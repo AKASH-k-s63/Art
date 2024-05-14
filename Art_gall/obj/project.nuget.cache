@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Y7p8PBwCz7YP0xrh3aA9ov1v93USQ6a4oBy9m5fXId/crGz6bdoQwe6OPM2NlBogsHO+lA98dOqDidLspWMEnw==",
+  "dgSpecHash": "CAvyPnfPYpEaDSfTDCBvFXQZA/ac3T5LJXlyFe2XzuaLf3vRVWIYCZclx0JVB5VARjsTnxMafDHaXuTTSTOqnA==",
   "success": true,
   "projectFilePath": "D:\\Virtual_Art_Gal\\Art_git_hub\\Art\\Art_gall\\Art_gall.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Akash\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Akash\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\Akash\\.nuget\\packages\\microsoft.aspnet.sessionstate.sessionstatemodule\\2.0.0\\microsoft.aspnet.sessionstate.sessionstatemodule.2.0.0.nupkg.sha512",
     "C:\\Users\\Akash\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Akash\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Akash\\.nuget\\packages\\microsoft.data.sqlclient\\5.2.0\\microsoft.data.sqlclient.5.2.0.nupkg.sha512",
@@ -53,5 +54,16 @@
     "C:\\Users\\Akash\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Akash\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.SessionState.SessionStateModule 2.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.SessionState.SessionStateModule",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

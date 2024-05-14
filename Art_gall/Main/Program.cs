@@ -1,4 +1,4 @@
-﻿using Art_gall.DAO;
+﻿using Art_gall.DAO.Service;
 using Art_gall.Model;
 using Art_gall.Util;
 using Microsoft.Data.SqlClient;
@@ -31,10 +31,70 @@ namespace Art_gall.Main
                     Console.WriteLine("Error: " + ex.Message);
                 }
             }
-            //End
-
             // Create an instance of VirtualArtGallery
             CrimeAnalysisServiceImpl virtualArtGallery = new CrimeAnalysisServiceImpl();
+
+            
+
+            //End
+            UserloginServices userdetails = new UserloginServices();
+            // Display main menu options
+            Console.WriteLine("Main Menu:");
+            Console.WriteLine("1. Login");
+            Console.WriteLine("2. Register");
+            Console.WriteLine("3. Logout");
+            // Add more menu options as needed...
+
+            // Get user input
+            int choice = int.Parse(Console.ReadLine());
+
+            // Perform actions based on user choice
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("Please Enter Login Credentials");
+                    Console.WriteLine("Enter your username: ");
+                    string username = Console.ReadLine();
+
+                    Console.WriteLine("Enter your password: ");
+                    string password = Console.ReadLine();
+
+                    User LoginUser = userdetails.LoginbyUser(username, password);
+                    if (LoginUser != null) // Check if Artworkbyid is not null
+                    {// Assuming you have a method to remove artwork from the gallery
+                        Console.WriteLine($"User LOGIN successfully with Id {LoginUser}.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed to Login With USer detail provided.");
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("Please Enter New Registration Credentials");
+                    User Adduser = new User();
+                    bool isadduser = userdetails.RegisterUser(Adduser);
+                    if (isadduser)
+                    {
+                        Console.WriteLine("User added successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed to add User.");
+                    }
+                    break;
+                case 3:
+                    Console.WriteLine("Logout Procedure Starts");
+                    User logout = userdetails.Logout();
+                   
+                    break;
+            }
+
+         
+            
+            Console.WriteLine("---------------GEt ALL USERS List Start-----------------------");
+            List<User> Userslist = userdetails.GetAllUsers();
+            Console.WriteLine("---------------GEt ALL USERS List End-----------------------");
+            
 
             //Artwork instance
             Artwork artwork = new Artwork();
@@ -187,6 +247,28 @@ namespace Art_gall.Main
             Console.WriteLine("--------Get User Fav Work End ---------------------");
 
 
+
+            Console.WriteLine("Enter the GalleryId:");
+            int GalleryId = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter the ArtworkID:");
+            int ArtworkId = Convert.ToInt32(Console.ReadLine());
+
+            // Add artwork to user's favorites
+            bool Addtogall = virtualArtGallery.AddArtworktoGallery(ArtworkId, GalleryId);
+
+            // Display result
+            if (Addtogall)
+            {
+                Console.WriteLine("Artwork added to Gallery successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Failed to add artwork to Gallery.");
+            }
+            Console.WriteLine("--------Add TO Artwork Gallery END ---------------------");
         }
+
+
     }
 }
